@@ -7,6 +7,7 @@
 
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="2.2.1" />
@@ -14,6 +15,7 @@
 
 
   <ItemGroup>
+    <ProjectReference Include="..\ChatMessenger.Common\ChatMessenger.Common.csproj" />
     <ProjectReference Include="..\ChatMessenger.DataAccessLayer\ChatMessenger.DataAccessLayer.csproj" />
   </ItemGroup>
 

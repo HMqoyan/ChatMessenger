@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using ChatMessenger.Common.AutoMapper;
 using ChatMessenger.DataAccessLayer.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -36,8 +38,16 @@ namespace ChatMessenger.PresentationLayer
                 .UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString"))
             );
 
+            var mapperConfig = new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile(new DefaultProfile());
+            });
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            var mapper = mapperConfig.CreateMapper();
+
+            services.AddSingleton(mapper);
+
+            services.AddMvc().SetCompatibilityVersion(Compatibili00000tyVersion.Version_2_2);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

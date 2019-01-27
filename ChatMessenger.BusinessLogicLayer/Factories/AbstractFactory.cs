@@ -1,4 +1,5 @@
-﻿using ChatMessenger.Core.Interfaces.BusinessLogics;
+﻿using AutoMapper;
+using ChatMessenger.Core.Interfaces.BusinessLogics;
 using ChatMessenger.Core.Interfaces.UnitOfWorks;
 using ChatMessenger.DataAccessLayer.Data;
 using ChatMessenger.DataAccessLayer.UnitOfWorks;
@@ -9,12 +10,14 @@ namespace ChatMessenger.BusinessLogicLayer.Factories
     public abstract class AbstractFactory : IDisposable
     {
         protected readonly IRepositoriesUnitOfWork _repos;
+        protected readonly IMapper _mapper;
         protected readonly ChatMessengerDbContext _dbContext;
 
-        public AbstractFactory(ChatMessengerDbContext dbContext)
+        public AbstractFactory(ChatMessengerDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
             _repos = new RepositoriesUnitOfWork(dbContext);
+            _mapper = mapper;
         }
 
         public abstract IUserBL CreateUserBL();
