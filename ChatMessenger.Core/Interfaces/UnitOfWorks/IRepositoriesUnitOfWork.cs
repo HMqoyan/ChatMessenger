@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace ChatMessenger.Core.Interfaces.UnitOfWorks
 {
-    public interface IRepositoriesUnitOfWorks : IDisposable
+    public interface IRepositoriesUnitOfWork : IDisposable
     {
         IUserRepository Users { get; }
         IMessageRepository Messages { get; }

@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ChatMessenger.Core\ChatMessenger.Core.csproj" />
+    <ProjectReference Include="..\ChatMessenger.DataAccessLayer\ChatMessenger.DataAccessLayer.csproj" />
+  </ItemGroup>
+
 </Project>

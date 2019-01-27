@@ -6,13 +6,13 @@ using ChatMessenger.DataAccessLayer.Repositories;
 
 namespace ChatMessenger.DataAccessLayer.UnitOfWorks
 {
-    public class RepositoriesUnitOfWorks : IRepositoriesUnitOfWorks
+    public class RepositoriesUnitOfWork : IRepositoriesUnitOfWork
     {
         protected readonly ChatMessengerDbContext _dbContext;
         protected IUserRepository _userRepository;
         protected IMessageRepository _messageRepository;
 
-        public RepositoriesUnitOfWorks(ChatMessengerDbContext dbContext)
+        public RepositoriesUnitOfWork(ChatMessengerDbContext dbContext)
         {
             _dbContext = dbContext;
         }
