@@ -19,5 +19,6 @@ namespace ChatMessenger.DataAccessLayer.Data
 
         internal virtual DbSet<User> Users { get; set; }
         internal virtual DbSet<Message> Messages { get; set; }
+        internal virtual DbSet<UserTokenSession> UserTokenSessions { get; set; }
     }
 }

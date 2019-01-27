@@ -13,9 +13,11 @@ namespace ChatMessenger.Common.AutoMapper
         public DefaultProfile()
         {
             CreateMap<User, UserDTO>().ReverseMap();
+            CreateMap<UserTokenSession, UserTokenSessionDTO>().ReverseMap();
             CreateMap<Message, MessageDTO>().ReverseMap();
 
             CreateMap<UserDTO, UserModel>().ReverseMap();
+            CreateMap<UserTokenSessionDTO, UserTokenSessionModel>().ReverseMap();
             CreateMap<MessageDTO, MessageModel>().ReverseMap();
         }
     }
