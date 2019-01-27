@@ -2,10 +2,7 @@
 using ChatMessenger.Core.Interfaces.Repositories;
 using ChatMessenger.DataAccessLayer.Data;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace ChatMessenger.DataAccessLayer.Repositories

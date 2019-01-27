@@ -1,7 +1,5 @@
 ﻿using ChatMessenger.Core.Interfaces.Models.Db;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace ChatMessenger.Core.Interfaces.Repositories
