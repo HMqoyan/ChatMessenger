@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ChatMessenger.Core.Models.Db;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -17,5 +18,9 @@ namespace ChatMessenger.DataAccessLayer.Data
         {
             base.OnModelCreating(modelBuilder);
         }
+
+
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Message> Messages { get; set; }
     }
 }
