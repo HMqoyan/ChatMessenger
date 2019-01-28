@@ -7,7 +7,7 @@ namespace ChatMessenger.Core.Interfaces.Repositories
     public interface IGenericRepository<TEntity> where TEntity : class, IEntity
     {
         Task<ICollection<TEntity>> GetAllAsync();
-        Task<TEntity> GetAsync(int entityId);
+        Task<TEntity> GetByIdAsync(int entityId);
         Task<TEntity> Create(TEntity entity);
         Task Delete(int entityId);
         void Delete(TEntity entity);

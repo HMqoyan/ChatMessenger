@@ -33,6 +33,8 @@ namespace ChatMessenger.PresentationLayer
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddMemoryCache();
+
             services.AddDbContext<ChatMessengerDbContext>(options =>
                 options.UseLazyLoadingProxies()
                 .UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString"))

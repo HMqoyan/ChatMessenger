@@ -24,7 +24,7 @@ namespace ChatMessenger.DataAccessLayer.Repositories
             return await _dbSet.ToListAsync();
         }
 
-        public virtual async Task<TEntity> GetAsync(int entityId)
+        public virtual async Task<TEntity> GetByIdAsync(int entityId)
         {
             return await _dbSet.FindAsync(entityId);
         }
@@ -36,7 +36,7 @@ namespace ChatMessenger.DataAccessLayer.Repositories
 
         public virtual async Task Delete(int entityId)
         {
-            TEntity entityToDelete = await GetAsync(entityId);
+            TEntity entityToDelete = await GetByIdAsync(entityId);
             Delete(entityToDelete);
         }
 

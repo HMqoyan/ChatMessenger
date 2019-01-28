@@ -3,6 +3,8 @@ using ChatMessenger.Core.Interfaces.BusinessLogics;
 using ChatMessenger.Core.Interfaces.UnitOfWorks;
 using ChatMessenger.DataAccessLayer.Data;
 using ChatMessenger.DataAccessLayer.UnitOfWorks;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Configuration;
 using System;
 
 namespace ChatMessenger.BusinessLogicLayer.Factories
@@ -20,7 +22,7 @@ namespace ChatMessenger.BusinessLogicLayer.Factories
             _mapper = mapper;
         }
 
-        public abstract IAccountBL CreateAccountBL();
+        public abstract IAccountBL CreateAccountBL(IMemoryCache memoryCache, IConfiguration configuration);
         public abstract IMessageBL CreateMessageBL();
 
         public virtual void Dispose()
