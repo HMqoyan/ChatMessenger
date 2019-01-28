@@ -25,5 +25,7 @@ namespace ChatMessenger.Core.Common
             public const string UnsuccessfulChangePasswordErrorMessage = "Can't change your password";
             public const string TokenExpireErrorMessage = "Your token has expired. Please login again";
         }
+
+        public const string Token = "Token";
     }
 }
