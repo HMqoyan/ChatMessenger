@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ChatMessenger.Core.Interfaces.BusinessLogics
 {
-    public interface IUserBL : IDisposable
+    public interface IAccountBL : IDisposable
     {
     }
 }

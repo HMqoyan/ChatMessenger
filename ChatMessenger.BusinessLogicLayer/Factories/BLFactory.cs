@@ -17,9 +17,9 @@ namespace ChatMessenger.BusinessLogicLayer.Factories
             return new MessageBL(_repos, _mapper);
         }
 
-        public override IUserBL CreateUserBL()
+        public override IAccountBL CreateAccountBL()
         {
-            return new UserBL(_repos, _mapper);
+            return new AccountBL(_repos, _mapper);
         }
     }
 }

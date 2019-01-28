@@ -10,13 +10,15 @@ namespace ChatMessenger.DataAccessLayer.UnitOfWorks
     {
         protected readonly ChatMessengerDbContext _dbContext;
         protected IUserRepository _userRepository;
+        protected IUserTokenSessionRepository _userTokenSessionRepository;
         protected IMessageRepository _messageRepository;
+
 
         public RepositoriesUnitOfWork(ChatMessengerDbContext dbContext)
         {
             _dbContext = dbContext;
         }
-        
+
         public virtual IUserRepository Users
         {
             get
@@ -25,6 +27,17 @@ namespace ChatMessenger.DataAccessLayer.UnitOfWorks
                     _userRepository = new UserRepository(_dbContext);
 
                 return _userRepository;
+            }
+        }
+
+        public virtual IUserTokenSessionRepository UserTokenSessions
+        {
+            get
+            {
+                if (_userTokenSessionRepository == null)
+                    _userTokenSessionRepository = new UserTokenSessionRepository(_dbContext);
+
+                return _userTokenSessionRepository;
             }
         }
 

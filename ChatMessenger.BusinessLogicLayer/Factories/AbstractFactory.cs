@@ -20,7 +20,7 @@ namespace ChatMessenger.BusinessLogicLayer.Factories
             _mapper = mapper;
         }
 
-        public abstract IUserBL CreateUserBL();
+        public abstract IAccountBL CreateAccountBL();
         public abstract IMessageBL CreateMessageBL();
 
         public virtual void Dispose()

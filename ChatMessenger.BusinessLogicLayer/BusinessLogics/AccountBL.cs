@@ -7,9 +7,9 @@ using ChatMessenger.Core.Interfaces.UnitOfWorks;
 
 namespace ChatMessenger.BusinessLogicLayer.BusinessLogics
 {
-    internal class UserBL : BaseBL, IUserBL
+    internal class AccountBL : BaseBL, IAccountBL
     {
-        public UserBL(IRepositoriesUnitOfWork repos, IMapper mapper) 
+        public AccountBL(IRepositoriesUnitOfWork repos, IMapper mapper) 
             : base(repos, mapper)
         {
         }

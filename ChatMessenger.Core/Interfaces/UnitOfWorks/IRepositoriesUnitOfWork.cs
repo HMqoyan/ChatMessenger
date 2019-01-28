@@ -7,6 +7,7 @@ namespace ChatMessenger.Core.Interfaces.UnitOfWorks
     public interface IRepositoriesUnitOfWork : IDisposable
     {
         IUserRepository Users { get; }
+        IUserTokenSessionRepository UserTokenSessions { get; }
         IMessageRepository Messages { get; }
 
         Task<int> SaveAsync();
