@@ -1,10 +1,8 @@
 ﻿using AutoMapper;
+using ChatMessenger.Core.Models.Cache;
 using ChatMessenger.Core.Models.Db;
 using ChatMessenger.Core.Models.DTO;
 using ChatMessenger.Core.Models.Presentation;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ChatMessenger.Common.AutoMapper
 {
@@ -19,6 +17,9 @@ namespace ChatMessenger.Common.AutoMapper
             CreateMap<UserDTO, UserModel>().ReverseMap();
             CreateMap<UserTokenSessionDTO, UserTokenSessionModel>().ReverseMap();
             CreateMap<MessageDTO, MessageModel>().ReverseMap();
+
+            CreateMap<UserDTO, UserCacheModel>().ReverseMap();
+            CreateMap<UserTokenSessionDTO, UserTokenSessionCacheModel>().ReverseMap();
         }
     }
 }
