@@ -158,6 +158,8 @@ namespace ChatMessenger.BusinessLogicLayer.BusinessLogics
 
             session.CloseActionIsLogout = true;
 
+
+
             _repos.UserTokenSessions.Update(session);
 
             if (await _repos.SaveAsync() == 0)

@@ -5,6 +5,13 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Views\Acc\**" />
+    <Content Remove="Views\Acc\**" />
+    <EmbeddedResource Remove="Views\Acc\**" />
+    <None Remove="Views\Acc\**" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="8.0.0" />

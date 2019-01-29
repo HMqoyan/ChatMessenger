@@ -8,7 +8,7 @@ namespace ChatMessenger.Core.Common
     public static class Dictionaries
     {
 
-        private readonly static Dictionary<CustomErrorEnum, string> _errorStatusMessage;
+        private static readonly Dictionary<CustomErrorEnum, string> _errorStatusMessage;
         public static Dictionary<CustomErrorEnum, string> ErrorStatusMessage
         {
             get

@@ -35,6 +35,13 @@ namespace ChatMessenger.PresentationLayer.Controllers
             _configuration = configuration;
         }
 
+
+        [HttpGet]
+        public IActionResult UserRegister()
+        {
+            return View();
+        }
+
         [HttpPost]
         public async Task<IActionResult> UserRegister(UserRegisterModelIn modelIn)
         {
@@ -84,6 +91,12 @@ namespace ChatMessenger.PresentationLayer.Controllers
             return Ok(response);
         }
 
+        [HttpGet]
+        public IActionResult UserLogIn()
+        {
+           return View();
+        }
+
         [HttpPost]
         public async Task<IActionResult> UserLogIn(UserLogInModelIn modelIn)
         {
@@ -109,7 +122,14 @@ namespace ChatMessenger.PresentationLayer.Controllers
                 return Ok(response);
             }
 
-            return Ok(response);
+            return RedirectToAction("Home/Index");
+        }
+
+
+        [HttpGet]
+        public IActionResult UserChangePassword()
+        {
+            return View();
         }
 
         [HttpPost]
