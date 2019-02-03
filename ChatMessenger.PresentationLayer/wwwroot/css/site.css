@@ -1,56 +1,117 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-image: url('../images/chat-background.jpg');
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+canvas {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    /*TODO: Change*/
+    height: 600px;
 }
 
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
 }
 
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+/* QR code generator */
+#qrCode {
+    margin: 15px;
 }
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px; /* Vertically center the text there */
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #45b6d7;
+    border-radius: 5px;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #106178;
+    }
+
+input[type="radio"] {
+    -webkit-appearance: none; /* remove default */
+    display: block;
+    margin: 10px;
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    vertical-align: middle;
+    box-shadow: hsla(0,0%,100%,.15) 0 1px 1px, inset hsla(0,0%,0%,.5) 0 0 0 1px;
+    background-color: hsla(0,0%,0%,.2);
+    background-image: -webkit-radial-gradient( hsla(200,100%,90%,1) 0%, hsla(200,100%,70%,1) 15%, hsla(200,100%,60%,.3) 28%, hsla(200,100%,30%,0) 70% );
+    background-repeat: no-repeat;
+    -webkit-transition: background-position .15s cubic-bezier(.8, 0, 1, 1), -webkit-transform .25s cubic-bezier(.8, 0, 1, 1);
+    outline: none;
+}
+
+    input[type="radio"]:checked {
+        -webkit-transition: background-position .2s .15s cubic-bezier(0, 0, .2, 1), -webkit-transform .25s cubic-bezier(0, 0, .2, 1);
+    }
+
+    input[type="radio"]:active {
+        -webkit-transform: scale(1.5);
+        -webkit-transition: -webkit-transform .1s cubic-bezier(0, 0, .2, 1);
+    }
+
+
+
+    /* The up/down direction logic */
+
+    input[type="radio"],
+    input[type="radio"]:active {
+        background-position: 0 24px;
+    }
+
+        input[type="radio"]:checked {
+            background-position: 0 0;
+        }
+
+            input[type="radio"]:checked ~ input,
+            input[type="radio"]:checked ~ input:active {
+                background-position: 0 -24px;
+            }
+
+.avatar .logo{
+    width: 100%;
+    height: 100%;
 }

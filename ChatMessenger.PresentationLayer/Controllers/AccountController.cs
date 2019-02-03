@@ -88,7 +88,7 @@ namespace ChatMessenger.PresentationLayer.Controllers
                 return Ok(response);
             }
 
-            return Ok(response);
+            return RedirectToAction("UserLogIn");
         }
 
         [HttpGet]
@@ -122,7 +122,7 @@ namespace ChatMessenger.PresentationLayer.Controllers
                 return Ok(response);
             }
 
-            return RedirectToAction("Home/Index");
+            return RedirectToAction("Index", "Chat");
         }
 
 

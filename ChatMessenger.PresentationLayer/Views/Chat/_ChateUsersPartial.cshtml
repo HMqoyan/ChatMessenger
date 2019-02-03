@@ -1,0 +1,30 @@
+﻿@model ICollection<ChatMessenger.Core.Models.Db.User>
+<div class="chat-users">
+    <div id="container">
+        <ul id="tabs">
+            <li id="all" class="active">All</li>
+            <li id="offline">Offline</li>
+            <li id="online">Online</li>
+        </ul>
+
+        <div id="card">
+            <input id="search" type="text" placeholder="  Search">
+            <div id="main">
+
+                @foreach (var item in Model)
+                {
+                    <div class="user">
+                        @*<span class="mega-octicon octicon-check status online">*@
+                        <div class="btn-block">
+                            <input type="hidden" name="toID" value="@item.Id"/>
+                            <img src="~/images/user_pictures/userPicture_02.png" class="logo" />
+                            <span id="users">@item.Email</span>
+                        </div>
+                        @*</span>*@
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,4 +1,5 @@
 ﻿using ChatMessenger.Core.Interfaces.Models.Db;
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

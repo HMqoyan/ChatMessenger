@@ -20,6 +20,9 @@ namespace ChatMessenger.Common.AutoMapper
 
             CreateMap<UserDTO, UserCacheModel>().ReverseMap();
             CreateMap<UserTokenSessionDTO, UserTokenSessionCacheModel>().ReverseMap();
+
+            //CreateMap<User, UserModel>().ReverseMap();
+            //CreateMap<UserModel, User>().ReverseMap();
         }
     }
 }

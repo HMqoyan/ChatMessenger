@@ -1,4 +1,5 @@
 ﻿using ChatMessenger.Core.Models.Db;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace ChatMessenger.DataAccessLayer.Data
@@ -8,9 +9,8 @@ namespace ChatMessenger.DataAccessLayer.Data
         public ChatMessengerDbContext(DbContextOptions<ChatMessengerDbContext> options)
             : base(options)
         {
-
+            
         }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

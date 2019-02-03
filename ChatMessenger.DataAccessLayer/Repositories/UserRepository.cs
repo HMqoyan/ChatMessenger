@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using ChatMessenger.Core.Interfaces.Repositories;
 using ChatMessenger.Core.Models.Db;
@@ -12,7 +14,7 @@ namespace ChatMessenger.DataAccessLayer.Repositories
         public UserRepository(ChatMessengerDbContext dbContext) 
             : base(dbContext)
         {
-
+            
         }
 
         public virtual async Task<bool> CheckingEmailExists(string email)
@@ -20,11 +22,21 @@ namespace ChatMessenger.DataAccessLayer.Repositories
             return await _dbSet.Where(wc => wc.Email.ToUpper() == email.ToUpper()).AnyAsync();
         }
 
+
         public virtual async Task<User> GetUserByEmailAndPassword(string email, string password)
         {
             return await _dbSet.Where(wc => wc.Email.ToUpper() == email.ToUpper() &&
                                       wc.Password == password &&
                                       !wc.Deleted).FirstOrDefaultAsync();
         }
+
+        //public IEnumerable<User> GetUsers
+        //{
+        //    get
+        //    {
+        //        return _dbContext.Users;
+        //    }
+        //}
+
     }
 }
